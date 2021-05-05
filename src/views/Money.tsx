@@ -18,7 +18,6 @@ function Money() {
     note: '',
     category: '-' as Category,
     amount: 0
-
   })
     return (
         <MyLayout>
