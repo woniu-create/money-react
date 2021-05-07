@@ -24,9 +24,10 @@ function Money() {
   const [selected,setSelected] = useState(defaultFormDate)
   const {records,addRecord} = useRecords();
   const submit = () => {
-    addRecord(selected);
-    alert('保存成功');
-    setSelected(defaultFormDate) //保存成功后置空
+    if(addRecord(selected)){
+      alert('保存成功');
+      setSelected(defaultFormDate) //保存成功后置空
+    }
   }
     return (
         <MyLayout>
