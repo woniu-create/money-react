@@ -7,6 +7,10 @@ import {CategorySection} from "../Money/CategorySection";
 import {NumberPadSection} from "../Money/NumberPadSection";
 import {useRecords} from "hooks/useRecords"
 
+const CategoryWrapper = styled.div`
+  background-color: #c4c4c4;
+`;
+
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
@@ -29,18 +33,14 @@ function Money() {
       setSelected(defaultFormDate) //保存成功后置空
     }
   }
-  useEffect(()=>{
-    setTimeout(()=>{
-      console.log('时间到');
-      setSelected({...selected,amount:1000})
-    },3000);
-  },[])
     return (
         <MyLayout>
             {JSON.stringify(selected)}
            <TagsSection value={selected.tagIds} onChange={(tagIds)=>setSelected({...selected,tagIds:tagIds})}/>
            <NotesSection value={selected.note} onChange={(note)=>setSelected({...selected,note:note})}/>
+           <CategoryWrapper>
            <CategorySection value={selected.category} onChange={(category)=>setSelected({...selected,category:category})}/>
+           </CategoryWrapper>
            <NumberPadSection value={selected.amount} onChange={(amount)=>setSelected({...selected,amount:amount})} onOK = {submit}/>
         </MyLayout>
     );
