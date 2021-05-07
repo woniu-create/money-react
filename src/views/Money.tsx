@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import styled from "styled-components";
 import {TagsSection} from "../Money/TagsSection";
 import {NotesSection} from "../Money/NotesSection";
@@ -26,7 +26,7 @@ const defaultFormDate = {
 
 function Money() {
   const [selected,setSelected] = useState(defaultFormDate)
-  const {records,addRecord} = useRecords();
+  const {addRecord} = useRecords();
   const submit = () => {
     if(addRecord(selected)){
       alert('保存成功');
