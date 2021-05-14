@@ -49,8 +49,12 @@ const useTags = () => {
     }
     const addTag =() => {
         const tagName = window.prompt('新标签的名称为');
-        if(tagName !==null ){
+        console.log(tagName);
+        if(!tagName){
+            window.alert('标签名不能为空')
+        }else{
           setTags([...tags,{id: createId(),name: tagName}])
+
         }
       }
     const getName = (id:number) => {
