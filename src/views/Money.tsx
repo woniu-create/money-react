@@ -35,7 +35,6 @@ function Money() {
   }
     return (
         <MyLayout scrollTop={999}>
-            {JSON.stringify(selected)}
            <TagsSection value={selected.tagIds} onChange={(tagIds)=>setSelected({...selected,tagIds:tagIds})}/>
            <NotesSection value={selected.note} onChange={(note)=>setSelected({...selected,note:note})}/>
            <CategoryWrapper>
