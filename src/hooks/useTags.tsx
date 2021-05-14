@@ -17,7 +17,7 @@ const useTags = () => {
       }
        setTags(localTags)
     },[]);
-   useUpdate(() => {window.localStorage.setItem('tags',JSON.stringify(tags))},[tags]);
+   useUpdate(() => {window.localStorage.setItem('tags',JSON.stringify(tags))},tags);
     const findTag = (id: number) => tags.filter(tag => tag.id === id)[0];
     const findTagIndex = (id: number) => {
         let result = -1;

@@ -11,7 +11,7 @@ const Wrapper= styled.section`
       padding: 16px 0;
       position:relative;
       &.selected::after{
-        content: '';
+      content: '';
         display:block;
         height: 3px;
         background:#333;
