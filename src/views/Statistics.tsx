@@ -7,7 +7,7 @@ import {useTags} from 'hooks/useTags';
 import day from 'dayjs'
 
 const CategoryWrapper = styled.div`
-  background: white;
+  background: #c4c4c4;
 `
 const Item = styled.div`
   display:flex;
@@ -26,6 +26,10 @@ const Header =styled.h3`
   font-size:18px;
   line-height: 20px;
   padding: 10px 16px;
+`
+const NoRecord = styled.h3`
+  text-align:center;
+  margin-top:40px;
 `
 
 function Statistics() {
@@ -51,12 +55,9 @@ function Statistics() {
         return 0;
     })
     console.log(array);
+    console.log(records);
     
-    return (
-        <Layout>
-            <CategoryWrapper>
-            < CategorySection value={category} onChange={(value)=>setCategory(value)}/>
-            </CategoryWrapper>
+    const collect= <div>
             {array.map(([date,records]) => <div>
                 <Header>{date}</Header>
             <div>
@@ -79,6 +80,16 @@ function Statistics() {
                 })}
             </div>
             </div>)}
+
+    </div>
+    
+    return (
+        <Layout>
+            <CategoryWrapper>
+            < CategorySection value={category} onChange={(value)=>setCategory(value)}/>
+            </CategoryWrapper>
+            {records.length === 0 ? <NoRecord>当前没有记账记录</NoRecord>: collect}
+
         </Layout>
     );
 }

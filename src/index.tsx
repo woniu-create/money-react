@@ -10,3 +10,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+
+window.onload=function(){setTimeout(function() {window.scrollTo(0, 1000)}, 0)}
